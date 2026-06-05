@@ -5,7 +5,7 @@ using UnityEngine;
 public class LiftChairToNextRoom : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private Room.RoomController _r;
+    [SerializeField] private Room.RoomController _room;
 
     public event Action PlayerOnPlace;
 
@@ -13,12 +13,12 @@ public class LiftChairToNextRoom : MonoBehaviour
 
     private void OnEnable()
     {
-        _r.RoomSpawned += StartMove;
+        _room.RoomSpawned += StartMove;
     }
 
     private void OnDisable()
     {
-        _r.RoomSpawned -= StartMove;
+        _room.RoomSpawned -= StartMove;
     }
 
     public void StartMove(Vector3 target)

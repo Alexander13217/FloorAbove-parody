@@ -7,21 +7,21 @@ namespace Room
     public class RoomController : MonoBehaviour
     {
         [SerializeField] private List<SpawnNextRoom> _rooms;
-        [SerializeField] private Test _t;
-        [SerializeField] private LiftChairToNextRoom _p;
+        [SerializeField] private NextRoomButton _nextRoomButton;
+        [SerializeField] private LiftChairToNextRoom _chair;
 
         public event Action<Vector3> RoomSpawned;
 
         private void OnEnable()
         {
-            _t.Pressed += Spawn;
-            _p.PlayerOnPlace += DeleteFirst;
+            _nextRoomButton.ButtonPressed += Spawn;
+            _chair.PlayerOnPlace += DeleteFirst;
         }
 
         private void OnDisable()
         {
-            _t.Pressed -= Spawn;
-            _p.PlayerOnPlace -= DeleteFirst;
+            _nextRoomButton.ButtonPressed -= Spawn;
+            _chair.PlayerOnPlace -= DeleteFirst;
         }
 
         private void Spawn()
