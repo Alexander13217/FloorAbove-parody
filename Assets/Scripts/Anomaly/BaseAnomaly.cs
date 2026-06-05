@@ -7,7 +7,7 @@ namespace Anomaly
         public virtual void Scare()
         {
             //Make scary sound
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
