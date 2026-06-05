@@ -13,6 +13,7 @@ public class SpawnAnomalyController : MonoBehaviour
             TrySpawnAnomaly();
         }
     }
+
     private void TrySpawnAnomaly()
     {       
         if (_roller.ShouldSpawnAnomaly())
