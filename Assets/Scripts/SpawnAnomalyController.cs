@@ -7,9 +7,8 @@ public class SpawnAnomalyController : MonoBehaviour
     private AnomalyRoller _roller = new AnomalyRoller();
 
     private void TrySpawnAnomaly()
-    {
-        bool need = _roller.ShouldSpawnAnomaly();
-        if (need)
+    {       
+        if (_roller.ShouldSpawnAnomaly())
         {
             _anomalies.SwitchOnAnomaly();
         }
