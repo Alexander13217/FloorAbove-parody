@@ -1,22 +1,35 @@
 using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class NextRoomButton : MonoBehaviour
 {
     [SerializeField] private LayerMask _buttonLayer;
+    [SerializeField] private LiftChairToNextRoom _chair;
 
     public event Action ButtonPressed;
 
     private Camera _camera;
+    private bool _isPressable = true;
 
     private void Awake()
     {
         _camera = Camera.main;
     }
 
+    private void OnEnable()
+    {
+        _chair.PlayerOnPlace += EnableButton;
+    }
+
+    private void OnDisable()
+    {
+        _chair.PlayerOnPlace -= EnableButton;
+    }
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && _isPressable)
         {
             CheckButtonPressed();
         }
@@ -29,6 +42,12 @@ public class NextRoomButton : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, _buttonLayer))
         {
             ButtonPressed?.Invoke();
+            _isPressable = false;
         }
+    }
+
+    private void EnableButton()
+    {
+        _isPressable = true;
     }
 }

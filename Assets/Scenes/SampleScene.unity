@@ -1478,7 +1478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LiftChairToNextRoom
   _speed: 1
-  _r: {fileID: 951126258}
+  _room: {fileID: 951126258}
 --- !u!1 &951126257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,8 +1510,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Room.RoomController
   _rooms:
   - {fileID: 1674097181}
-  _t: {fileID: 1453750561}
-  _p: {fileID: 915764292}
+  _nextRoomButton: {fileID: 1453750561}
+  _chair: {fileID: 915764292}
 --- !u!4 &951126259
 Transform:
   m_ObjectHideFlags: 0
@@ -2269,6 +2269,7 @@ MonoBehaviour:
   _buttonLayer:
     serializedVersion: 2
     m_Bits: 64
+  _chair: {fileID: 915764292}
 --- !u!136 &1453750562
 CapsuleCollider:
   m_ObjectHideFlags: 0
