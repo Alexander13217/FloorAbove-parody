@@ -28,6 +28,7 @@ namespace Anomaly
                 yield return null;
             }
             _screamer.enabled = false;
+            _image = null;
             base.Scare();
         }
     }

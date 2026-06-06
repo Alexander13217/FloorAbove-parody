@@ -38,7 +38,7 @@ namespace Anomaly
                 distance -= move.magnitude;
                 yield return null;
             }
-
+            _move = null;
             base.Scare();
         }
     }
