@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Room
 {
-    public class RoomController : MonoBehaviour
+    public class RoomSpawner : MonoBehaviour
     {
         [SerializeField] private List<SpawnNextRoom> _rooms;
         [SerializeField] private NextRoomButton _nextRoomButton;

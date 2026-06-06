@@ -4,7 +4,7 @@ using UnityEngine;
 public class SpawnAnomalyController : MonoBehaviour
 {
     [SerializeField] private EnableAnomaly _anomalies;
-    [SerializeField] private RoomController _room;
+    [SerializeField] private RoomSpawner _room;
 
     private AnomalyRoller _roller = new AnomalyRoller();
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class LiftChairToNextRoom : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private Room.RoomController _room;
+    [SerializeField] private Room.RoomSpawner _room;
 
     public event Action PlayerOnPlace;
 
