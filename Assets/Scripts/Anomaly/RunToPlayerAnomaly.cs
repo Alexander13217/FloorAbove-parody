@@ -31,6 +31,7 @@ namespace Anomaly
         private IEnumerator MoveToCamera
         (Vector3 cameraPosition, Vector3 direction, float speed, float distance)
         {
+            Vector3 startPos = transform.localPosition;
             while (distance >= _offset)
             {
                 Vector3 move = direction * speed * Time.deltaTime;
@@ -40,6 +41,7 @@ namespace Anomaly
             }
             _move = null;
             base.Scare();
+            transform.localPosition = startPos;
         }
     }
 }
