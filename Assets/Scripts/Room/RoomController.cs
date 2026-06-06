@@ -9,6 +9,7 @@ namespace Room
         [SerializeField] private List<SpawnNextRoom> _rooms;
         [SerializeField] private NextRoomButton _nextRoomButton;
         [SerializeField] private LiftChairToNextRoom _chair;
+        [SerializeField] private GameObject _roomPrefab;
 
         public event Action<Vector3> RoomSpawned;
 
@@ -28,7 +29,7 @@ namespace Room
         {
             if (_rooms.Count <= 0) return;
 
-            var room = _rooms[_rooms.Count - 1].SpawnRoom();
+            var room = _rooms[_rooms.Count - 1].SpawnRoom(_roomPrefab);
             _rooms.Add(room);
             RoomSpawned?.Invoke(room.gameObject.transform.position);
         }
