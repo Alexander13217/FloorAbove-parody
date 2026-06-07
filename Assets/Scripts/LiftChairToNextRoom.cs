@@ -5,21 +5,10 @@ using UnityEngine;
 public class LiftChairToNextRoom : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private Room.RoomSpawner _room;
 
     public event Action PlayerOnPlace;
 
     private Coroutine _move = null;
-
-    private void OnEnable()
-    {
-        _room.RoomSpawned += StartMove;
-    }
-
-    private void OnDisable()
-    {
-        _room.RoomSpawned -= StartMove;
-    }
 
     public void StartMove(Vector3 target)
     {

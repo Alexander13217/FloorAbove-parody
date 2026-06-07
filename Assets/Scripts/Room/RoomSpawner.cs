@@ -7,31 +7,26 @@ namespace Room
     public class RoomSpawner : MonoBehaviour
     {
         [SerializeField] private List<SpawnNextRoom> _rooms;
-        [SerializeField] private NextRoomButton _nextRoomButton;
         [SerializeField] private LiftChairToNextRoom _chair;
         [SerializeField] private GameObject _roomPrefab;
 
-        public event Action<Vector3> RoomSpawned;
-
         private void OnEnable()
         {
-            _nextRoomButton.ButtonPressed += Spawn;
             _chair.PlayerOnPlace += DeleteFirst;
         }
 
         private void OnDisable()
         {
-            _nextRoomButton.ButtonPressed -= Spawn;
             _chair.PlayerOnPlace -= DeleteFirst;
         }
 
-        private void Spawn()
+        public Vector3 Spawn()
         {
-            if (_rooms.Count <= 0) return;
+            if (_rooms.Count <= 0) return Vector3.zero;
 
             var room = _rooms[_rooms.Count - 1].SpawnRoom(_roomPrefab);
             _rooms.Add(room);
-            RoomSpawned?.Invoke(room.gameObject.transform.position);
+            return room.gameObject.transform.position;
         }
 
         private void DeleteFirst()
