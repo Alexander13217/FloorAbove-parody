@@ -5,6 +5,7 @@ namespace Player
     public class DetectAnomaly : MonoBehaviour
     {
         [SerializeField] private LayerMask _anomaly;
+        [SerializeField] private CameraFair _fair;
 
         private Camera _camera;
 
@@ -29,6 +30,7 @@ namespace Player
             {
                 if(hit.collider.TryGetComponent(out Anomaly.BaseAnomaly a))
                 {
+                    _fair.StartFocusing(a.ClipDuration);
                     a.Scare();
                 }
             }

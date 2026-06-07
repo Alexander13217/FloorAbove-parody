@@ -29,6 +29,7 @@ namespace Player
             _yRotation = Mathf.Clamp(_yRotation, -_maxVerticalRotation, _maxVerticalRotation);
             _camera.transform.rotation = Quaternion.Euler(-_yRotation, _xRotation, 0f);
         }
+
     }
 }
 
