@@ -13,7 +13,9 @@ namespace Anomaly
         private void OnDisable()
         {
             _image = null;
+            _screamer.enabled = false;
         }
+        
 
         public override void Scare()
         {

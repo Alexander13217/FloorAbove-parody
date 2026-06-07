@@ -15,7 +15,6 @@ namespace Anomaly
 
         public virtual void Scare()
         {
-            //Make scary sound
             Detected?.Invoke();
             StartCoroutine(MakeSound());
         }
