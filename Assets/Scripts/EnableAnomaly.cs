@@ -1,4 +1,6 @@
+using Anomaly;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class EnableAnomaly : MonoBehaviour
@@ -13,9 +15,10 @@ public class EnableAnomaly : MonoBehaviour
         ResetAnomalyList();
     }
 
-    public void SwitchOnAnomaly()
+    public BaseAnomaly SwitchOnAnomaly()
     {
         int anomalyIndex = _random.Next(0, _currentAnomalies.Count);
+        var anomaly = _currentAnomalies[anomalyIndex].GetComponent<BaseAnomaly>();
         _currentAnomalies[anomalyIndex].SetActive(true);
         _currentAnomalies.RemoveAt(anomalyIndex);
 
@@ -23,6 +26,8 @@ public class EnableAnomaly : MonoBehaviour
         {
             ResetAnomalyList();
         }
+
+        return anomaly;
     }
 
     private void ResetAnomalyList()

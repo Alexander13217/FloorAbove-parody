@@ -7,14 +7,19 @@ namespace Anomaly
     public class JumpScareAnomaly : BaseAnomaly
     {
         [SerializeField] private Image _screamer;
-        [SerializeField] private float _screamerDuration;
-
+        
         private Coroutine _image = null;
+
+        private void OnDisable()
+        {
+            _image = null;
+        }
 
         public override void Scare()
         {
             if (_image != null) return;
 
+            base.Scare();
             _image = StartCoroutine(ShowImage());
         }
 
@@ -22,14 +27,13 @@ namespace Anomaly
         {
             _screamer.enabled = true;
             float t = 0f;
-            while (t <= _screamerDuration)
+            while (t <= ClipDuration)
             {
                 t += Time.deltaTime;
                 yield return null;
             }
             _screamer.enabled = false;
             _image = null;
-            base.Scare();
         }
     }
 }

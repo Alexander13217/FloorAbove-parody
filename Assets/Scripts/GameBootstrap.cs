@@ -7,6 +7,8 @@ public class GameBootstrap : MonoBehaviour
     [SerializeField] private RoomSpawner _room;
     [SerializeField] private LiftChairToNextRoom _chair;
     [SerializeField] private SpawnAnomalyController _spawner;
+    [SerializeField] private AnomalyInRoom _anomaly;
+    [SerializeField] private RoomLevel _roomLvl;
 
     private void OnEnable()
     {
@@ -22,6 +24,14 @@ public class GameBootstrap : MonoBehaviour
     {
         var place = _room.Spawn();
         _chair.StartMove(place);
+        bool isLose = _anomaly.CheckLose();
+        if (isLose == true)
+        {
+            _roomLvl.Reset();
+            return;
+        }
+
+        _roomLvl.Increase();
         _spawner.TrySpawnAnomaly(place);
     }
 }

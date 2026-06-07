@@ -5,10 +5,14 @@ namespace Anomaly
 {
     public class RunToPlayerAnomaly : BaseAnomaly
     {
-        [SerializeField] private float _runDuration;
         [SerializeField] private float _offset;
 
-        private Coroutine _move = null; 
+        private Coroutine _move = null;
+
+        private void OnDisable()
+        {
+            _move = null;
+        }
 
         public override void Scare()
         {
@@ -22,8 +26,8 @@ namespace Anomaly
                 cameraPosition
             );
 
-            float moveSpeed = distanceToCamera / _runDuration;
-
+            float moveSpeed = distanceToCamera / ClipDuration;
+            
             Vector3 direction = (cameraPosition - transform.position).normalized;
             _move = StartCoroutine(MoveToCamera(cameraPosition, direction, moveSpeed, distanceToCamera));
         }
@@ -32,6 +36,7 @@ namespace Anomaly
         (Vector3 cameraPosition, Vector3 direction, float speed, float distance)
         {
             Vector3 startPos = transform.localPosition;
+            base.Scare();
             while (distance >= _offset)
             {
                 Vector3 move = direction * speed * Time.deltaTime;
@@ -40,7 +45,6 @@ namespace Anomaly
                 yield return null;
             }
             _move = null;
-            base.Scare();
             transform.localPosition = startPos;
         }
     }
