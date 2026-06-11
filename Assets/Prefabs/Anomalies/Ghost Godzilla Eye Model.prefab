@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7851534082334464419
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 43.397766
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 43.397762
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 43.397766
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.503
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.88
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.362
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7214463
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5755152
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.24014848
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.30104202
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 77.16
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 45.299
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 70e7dfa7f17732e48aecd17f02cc4def, type: 2}
+    - target: {fileID: 919132149155446097, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: m_Name
+      value: Ghost Godzilla Eye Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7089187075323015841}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 444276362755937220}
+  m_SourcePrefab: {fileID: 100100000, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+--- !u!1 &6933055746387354866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f4d4927f05d1f244cad53b55a4e53090, type: 3}
+  m_PrefabInstance: {fileID: 7851534082334464419}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &7089187075323015841
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6933055746387354866}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.010000005
+  m_Center: {x: 2.4980018e-16, y: 0.0000000013969841, z: -0.000000009778887}
+--- !u!114 &444276362755937220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6933055746387354866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 741094189536edd44987f9b98d316f84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Anomaly.RunToPlayerAnomaly
+  _source: {fileID: 0}
+  _clip: {fileID: 8300000, guid: 817d59bd0b30e8b4ab597dd0a21a01d5, type: 3}
+  _offset: 0
