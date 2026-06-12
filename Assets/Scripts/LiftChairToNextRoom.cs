@@ -1,3 +1,4 @@
+using Player;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -18,7 +19,7 @@ public class LiftChairToNextRoom : MonoBehaviour
 
     private IEnumerator Lift(Vector3 target)
     {
-        while(Vector3.Distance(transform.position, target) >= 0.1f)
+        while (Vector3.Distance(transform.position, target) >= 0.2f)
         {
             Vector3 direction = (target - transform.position);
             Vector3 move = direction * _speed * Time.deltaTime;

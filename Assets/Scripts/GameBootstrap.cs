@@ -9,6 +9,7 @@ public class GameBootstrap : MonoBehaviour
     [SerializeField] private SpawnAnomalyController _spawner;
     [SerializeField] private AnomalyInRoom _anomaly;
     [SerializeField] private RoomLevel _roomLvl;
+    [SerializeField] private GameObject _levelCanvas;
 
     private void OnEnable()
     {
@@ -23,6 +24,7 @@ public class GameBootstrap : MonoBehaviour
     private void NextFloorSpawn()
     {
         var place = _room.Spawn();
+        _levelCanvas.transform.position = place;
         _chair.StartMove(place);
         bool isLose = _anomaly.CheckLose();
         if (isLose == true)
