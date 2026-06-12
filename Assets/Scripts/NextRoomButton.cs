@@ -20,11 +20,13 @@ public class NextRoomButton : MonoBehaviour
     private void OnEnable()
     {
         _chair.PlayerOnPlace += EnableButton;
+        GlobalEvents.Won += OnWin;
     }
 
     private void OnDisable()
     {
         _chair.PlayerOnPlace -= EnableButton;
+        GlobalEvents.Won -= OnWin;
     }
 
     private void Update()
@@ -33,6 +35,13 @@ public class NextRoomButton : MonoBehaviour
         {
             CheckButtonPressed();
         }
+    }
+
+    private void OnWin()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        enabled = false;
     }
 
     private void CheckButtonPressed()
