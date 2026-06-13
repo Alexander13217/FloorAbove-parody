@@ -608,7 +608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea4d66d7957f0948bb56553cc930f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoToScene
-  _scene: {fileID: 102900000, guid: 99c9720ab356a0642a771bea13969a05, type: 3}
+  _sceneName: GamePlay
 --- !u!1001 &525801200
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class ShowGameStory : MonoBehaviour
     [SerializeField] private TMP_Text _textToContinue;
     [SerializeField] private float _delayToShowSymbol;
     [SerializeField] private Button _btn;
+    [SerializeField] private AudioSource _typingSource;
 
     private string[] _storyParts =
     {
@@ -31,11 +32,13 @@ public class ShowGameStory : MonoBehaviour
     {
         _textLine.text = "";
         _textToContinue.enabled = false;
+        _typingSource.Play();
         foreach (char symbol in text)
         {
             _textLine.text += symbol;
             yield return new WaitForSeconds(_delayToShowSymbol);
         }
+        _typingSource.Stop();
         _textToContinue.enabled = true;
     }
 

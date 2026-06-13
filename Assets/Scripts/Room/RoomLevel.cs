@@ -15,7 +15,7 @@ public class RoomLevel : MonoBehaviour
     public bool Increase()
     {
         _level += 1;
-        if(_level > 4)
+        if(_level > 13)
         {
             GlobalEvents.Win();
             return true;
