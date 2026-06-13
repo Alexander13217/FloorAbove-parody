@@ -23,17 +23,21 @@ public class GameBootstrap : MonoBehaviour
 
     private void NextFloorSpawn()
     {
+
         var place = _room.Spawn();
         _levelCanvas.transform.position = place;
         _chair.StartMove(place);
         bool isLose = _anomaly.CheckLose();
+
         if (isLose == true)
         {
             _roomLvl.Reset();
             return;
         }
 
-        _roomLvl.Increase();
+        bool isWin = _roomLvl.Increase();
+        if (isWin == true) return;
+
         _spawner.TrySpawnAnomaly(place);
     }
 }

@@ -12,14 +12,16 @@ public class RoomLevel : MonoBehaviour
         _levelText.text = "1";
     }
 
-    public void Increase()
+    public bool Increase()
     {
         _level += 1;
         if(_level > 4)
         {
             GlobalEvents.Win();
+            return true;
         }
         _levelText.text = System.Convert.ToString(_level);
+        return false;
     }
 
     public void Reset()
