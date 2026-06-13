@@ -22,6 +22,8 @@ namespace Player
 
         private void Update()
         {
+            if (Time.timeScale == 0f) return;
+
             _xRotation += Input.GetAxis("Mouse X") * _sensitivity;
             _yRotation += Input.GetAxis("Mouse Y") * _sensitivity;
 
@@ -29,7 +31,6 @@ namespace Player
             _yRotation = Mathf.Clamp(_yRotation, -_maxVerticalRotation, _maxVerticalRotation);
             _camera.transform.rotation = Quaternion.Euler(-_yRotation, _xRotation, 0f);
         }
-
     }
 }
 
