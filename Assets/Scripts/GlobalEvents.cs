@@ -1,3 +1,4 @@
+using Settings;
 using System;
 
 public class GlobalEvents
@@ -5,6 +6,7 @@ public class GlobalEvents
     static public event Action Won;
     static public event Action Paused;
     static public event Action UnPaused;
+    static public event Action<SettingsData> SettingsChanged;
 
     static public void Win()
     {
@@ -19,6 +21,11 @@ public class GlobalEvents
     static public void UnPause()
     {
         UnPaused?.Invoke();
+    }
+
+    static public void SettingsChange(SettingsData data)
+    {
+        SettingsChanged?.Invoke(data);
     }
 }
 

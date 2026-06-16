@@ -1,3 +1,4 @@
+using Settings;
 using UnityEngine;
 
 namespace Player
@@ -20,6 +21,16 @@ namespace Player
             _camera = Camera.main;
         }
 
+        private void OnEnable()
+        {
+            GlobalEvents.SettingsChanged += SensitivityChanged;
+        }
+
+        private void OnDisable()
+        {
+            GlobalEvents.SettingsChanged -= SensitivityChanged;
+        }
+
         private void Update()
         {
             if (Time.timeScale == 0f) return;
@@ -30,6 +41,11 @@ namespace Player
             transform.rotation = Quaternion.Euler(0f, _xRotation, 0f);
             _yRotation = Mathf.Clamp(_yRotation, -_maxVerticalRotation, _maxVerticalRotation);
             _camera.transform.rotation = Quaternion.Euler(-_yRotation, _xRotation, 0f);
+        }
+
+        private void SensitivityChanged(SettingsData sentitivity)
+        {
+            _sensitivity = sentitivity.Sensitivity;
         }
     }
 }
